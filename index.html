@@ -7,6 +7,18 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <title>España 2026 — Dave, Kelly & Jacobo</title>
+  <style>
+    #splash-screen {
+      position: fixed; inset: 0; z-index: 9999;
+      background: #0d2b4e;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 0;
+      transition: opacity 0.6s ease;
+    }
+    #splash-screen.hidden { opacity: 0; pointer-events: none; }
+    #splash-canvas { display: block; }
+  </style>
   <link rel="manifest" href="manifest.json" />
   <style>
     :root {
@@ -804,6 +816,85 @@
   </style>
 </head>
 <body>
+
+<!-- SPLASH SCREEN -->
+<div id="splash-screen">
+  <canvas id="splash-canvas" width="200" height="200"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js"></script>
+<script>
+(function() {
+  const canvas = document.getElementById('splash-canvas');
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setSize(200, 200);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
+  camera.position.z = 3.2;
+
+  const texW = 1024, texH = 512;
+  const tc = document.createElement('canvas');
+  tc.width = texW; tc.height = texH;
+  const c = tc.getContext('2d');
+  const p1 = texH * 0.38, p2 = texH * 0.22, blend = 200;
+
+  function hexToRgb(h) { return [parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)]; }
+  const esColors = [
+    {y0:0,y1:p1,rgb:hexToRgb('#c60b1e')},
+    {y0:p1,y1:p1+p2,rgb:hexToRgb('#f1bf00')},
+    {y0:p1+p2,y1:texH,rgb:hexToRgb('#c60b1e')}
+  ];
+  const coColors = [
+    {y0:0,y1:p1,rgb:hexToRgb('#FCD116')},
+    {y0:p1,y1:p1+p2,rgb:hexToRgb('#003087')},
+    {y0:p1+p2,y1:texH,rgb:hexToRgb('#CE1126')}
+  ];
+  function getColor(bands, y) { for(const b of bands) if(y>=b.y0&&y<b.y1) return b.rgb; return bands[bands.length-1].rgb; }
+  function smoothstep(t) { t=Math.max(0,Math.min(1,t)); return t*t*(3-2*t); }
+
+  const imgData = c.createImageData(texW, texH);
+  const d = imgData.data;
+  for(let y=0;y<texH;y++) {
+    const es = getColor(esColors,y), co = getColor(coColors,y);
+    for(let x=0;x<texW;x++) {
+      const idx=(y*texW+x)*4;
+      let t;
+      if(x < blend/2) { t = 1 - smoothstep(x/(blend/2)); }
+      else { t = smoothstep((x-(texW/2-blend/2))/blend); }
+      d[idx]   = es[0]+(co[0]-es[0])*t;
+      d[idx+1] = es[1]+(co[1]-es[1])*t;
+      d[idx+2] = es[2]+(co[2]-es[2])*t;
+      d[idx+3] = 255;
+    }
+  }
+  c.putImageData(imgData, 0, 0);
+
+  const texture = new THREE.CanvasTexture(tc);
+  const globe = new THREE.Mesh(
+    new THREE.SphereGeometry(1.15, 80, 80),
+    new THREE.MeshPhongMaterial({map:texture, shininess:40, specular:new THREE.Color(0x333333)})
+  );
+  scene.add(globe);
+  scene.add(new THREE.Mesh(new THREE.SphereGeometry(1.22,64,64), new THREE.MeshPhongMaterial({color:0x4488ff,transparent:true,opacity:0.07,side:THREE.FrontSide})));
+  scene.add(new THREE.AmbientLight(0xffffff, 0.5));
+  const sun = new THREE.DirectionalLight(0xfff5e0, 1.0); sun.position.set(4,2,5); scene.add(sun);
+  const fill = new THREE.DirectionalLight(0x8899ff, 0.15); fill.position.set(-4,-1,-3); scene.add(fill);
+
+  let frames = 0;
+  const totalFrames = 180; // ~3 segundos a 60fps
+  (function animate() {
+    if(frames < totalFrames + 30) requestAnimationFrame(animate);
+    globe.rotation.y += 0.018;
+    renderer.render(scene, camera);
+    frames++;
+    if(frames === totalFrames) {
+      const splash = document.getElementById('splash-screen');
+      splash.classList.add('hidden');
+      setTimeout(() => { splash.style.display = 'none'; renderer.dispose(); }, 700);
+    }
+  })();
+})();
+</script>
 
 <div class="header">
   <div class="header-bg"></div>
