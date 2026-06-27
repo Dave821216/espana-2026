@@ -1,0 +1,587 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680" width="900" height="680" font-family="'SF Pro Display', -apple-system, 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!--  BACKGROUND GRADIENTS                           -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <linearGradient id="bg-main" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f1923"/>
+      <stop offset="100%" stop-color="#1a2535"/>
+    </linearGradient>
+
+    <!-- ROW LABEL BG -->
+    <linearGradient id="label-a" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2a4a7f" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#1e3a6e" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="label-b" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7f4a7a" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#6e3a6e" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="label-c" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7f6020" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#6e5010" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="label-d" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4a207f" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#3a107e" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!--  STYLE A: GLASSMORPHISM — icon container fills  -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <radialGradient id="glass-bg-cal" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#a8d4ff" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#4a90d9" stop-opacity="0.15"/>
+    </radialGradient>
+    <radialGradient id="glass-bg-rcpt" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#b8f0e8" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0.15"/>
+    </radialGradient>
+    <radialGradient id="glass-bg-wlt" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#c4b5fd" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.15"/>
+    </radialGradient>
+    <radialGradient id="glass-bg-chr" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#fde68a" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.15"/>
+    </radialGradient>
+    <radialGradient id="glass-bg-pin" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#fca5a5" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#ef4444" stop-opacity="0.15"/>
+    </radialGradient>
+    <radialGradient id="glass-bg-map" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#6ee7b7" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0.15"/>
+    </radialGradient>
+
+    <!-- Glass highlight sheen -->
+    <linearGradient id="glass-sheen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.30"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.00"/>
+    </linearGradient>
+
+    <!-- Glass inner glow filter -->
+    <filter id="glass-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#7ec8ff" flood-opacity="0.5" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glass-drop" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#3b82f6" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!--  STYLE B: CLAY / 3D INFLATED — soft pastels     -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <radialGradient id="clay-cal" cx="38%" cy="28%" r="65%">
+      <stop offset="0%" stop-color="#bfdbfe"/>
+      <stop offset="60%" stop-color="#93c5fd"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </radialGradient>
+    <radialGradient id="clay-rcpt" cx="38%" cy="28%" r="65%">
+      <stop offset="0%" stop-color="#ccfbf1"/>
+      <stop offset="60%" stop-color="#99f6e4"/>
+      <stop offset="100%" stop-color="#5eead4"/>
+    </radialGradient>
+    <radialGradient id="clay-wlt" cx="38%" cy="28%" r="65%">
+      <stop offset="0%" stop-color="#ede9fe"/>
+      <stop offset="60%" stop-color="#ddd6fe"/>
+      <stop offset="100%" stop-color="#c4b5fd"/>
+    </radialGradient>
+    <radialGradient id="clay-chr" cx="38%" cy="28%" r="65%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="60%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#fcd34d"/>
+    </radialGradient>
+    <radialGradient id="clay-pin" cx="38%" cy="28%" r="65%">
+      <stop offset="0%" stop-color="#ffe4e6"/>
+      <stop offset="60%" stop-color="#fecdd3"/>
+      <stop offset="100%" stop-color="#fda4af"/>
+    </radialGradient>
+    <radialGradient id="clay-map" cx="38%" cy="28%" r="65%">
+      <stop offset="0%" stop-color="#d1fae5"/>
+      <stop offset="60%" stop-color="#a7f3d0"/>
+      <stop offset="100%" stop-color="#6ee7b7"/>
+    </radialGradient>
+
+    <!-- Clay highlight + shadow filters -->
+    <filter id="clay-shadow" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#00000033"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#00000022"/>
+    </filter>
+    <linearGradient id="clay-sheen" x1="25%" y1="0%" x2="75%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.08"/>
+    </linearGradient>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!--  STYLE C: DARK PREMIUM — deep dark + gold       -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <radialGradient id="dark-bg" cx="40%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="#1c2d42"/>
+      <stop offset="100%" stop-color="#0d1b2a"/>
+    </radialGradient>
+    <linearGradient id="gold-icon" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fde68a"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="dark-sheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.00"/>
+    </linearGradient>
+    <filter id="dark-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#f59e0b" flood-opacity="0.5"/>
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+    <filter id="dark-outer" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.7"/>
+    </filter>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!--  STYLE D: GRADIENT VIVID                        -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <linearGradient id="vivid-cal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="vivid-rcpt" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="vivid-wlt" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="vivid-chr" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+    <linearGradient id="vivid-pin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f472b6"/>
+      <stop offset="100%" stop-color="#be185d"/>
+    </linearGradient>
+    <linearGradient id="vivid-map" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <filter id="vivid-shadow" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+    <linearGradient id="vivid-sheen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.10"/>
+    </linearGradient>
+
+    <!-- Title gradient -->
+    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="50%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+
+    <!-- Separator line gradient -->
+    <linearGradient id="sep-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#ffffff" stop-opacity="0.15"/>
+      <stop offset="80%" stop-color="#ffffff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+  </defs>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!--  MAIN BACKGROUND                                                     -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <rect width="900" height="680" fill="url(#bg-main)" rx="0"/>
+
+  <!-- Subtle noise texture overlay via small pattern -->
+  <rect width="900" height="680" fill="#ffffff" opacity="0.015"/>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="900" height="2" fill="url(#title-grad)" opacity="0.8"/>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!--  HEADER                                                              -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <text x="450" y="38" text-anchor="middle" font-size="13" font-weight="600" letter-spacing="4" fill="#f59e0b" opacity="0.9">ESPAÑA 2026 · PWA</text>
+  <text x="450" y="65" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff" letter-spacing="1">Navigation Icon Style Directions</text>
+
+  <!-- Column headers -->
+  <text x="200" y="94" text-anchor="middle" font-size="10.5" fill="#94a3b8" letter-spacing="1.5">ITINERARIO</text>
+  <text x="296" y="94" text-anchor="middle" font-size="10.5" fill="#94a3b8" letter-spacing="1.5">EXTRAS</text>
+  <text x="392" y="94" text-anchor="middle" font-size="10.5" fill="#94a3b8" letter-spacing="1.5">GASTOS</text>
+  <text x="488" y="94" text-anchor="middle" font-size="10.5" fill="#94a3b8" letter-spacing="1.5">PRESUP.</text>
+  <text x="584" y="94" text-anchor="middle" font-size="10.5" fill="#94a3b8" letter-spacing="1.5">LUGARES</text>
+  <text x="680" y="94" text-anchor="middle" font-size="10.5" fill="#94a3b8" letter-spacing="1.5">MAPA</text>
+
+  <!-- Header divider -->
+  <line x1="30" y1="103" x2="870" y2="103" stroke="url(#sep-line)" stroke-width="1"/>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!--  MACRO: Icon rows start at y=115, each row is 140px tall           -->
+  <!--  Row A: y=115–255  label-center y=186                             -->
+  <!--  Row B: y=255–395  label-center y=326                             -->
+  <!--  Row C: y=395–535  label-center y=466                             -->
+  <!--  Row D: y=535–675  label-center y=606                             -->
+  <!--  Icon center X: 200, 296, 392, 488, 584, 680                      -->
+  <!--  Icon center Y per row: 181, 321, 461, 601                        -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+
+  <!-- ═══════════════════════════════ ROW A — GLASSMORPHISM ═══════════════════════════════ -->
+
+  <!-- Row A background tint -->
+  <rect x="30" y="110" width="840" height="138" rx="12" fill="#1e3a6e" opacity="0.15"/>
+
+  <!-- Style label pill -->
+  <rect x="34" y="124" width="140" height="28" rx="14" fill="#2563eb" opacity="0.25"/>
+  <text x="44" y="136" font-size="9" font-weight="700" fill="#7ec8ff" letter-spacing="2" dominant-baseline="middle">STYLE A</text>
+  <text x="44" y="148" font-size="10.5" font-weight="600" fill="#bfdbfe" letter-spacing="0.5">Glassmorphism</text>
+
+  <!-- ── A1 ITINERARIO (calendar) at cx=200, cy=181 ── -->
+  <g filter="url(#glass-drop)">
+    <circle cx="200" cy="181" r="36" fill="url(#glass-bg-cal)" stroke="#a8d4ff" stroke-width="1" stroke-opacity="0.6"/>
+    <circle cx="200" cy="181" r="36" fill="url(#glass-sheen)"/>
+    <!-- Calendar icon: body -->
+    <rect x="183" y="170" width="34" height="28" rx="4" fill="none" stroke="#e0f2fe" stroke-width="1.8"/>
+    <!-- top bar -->
+    <rect x="183" y="170" width="34" height="8" rx="4" fill="#7ec8ff" fill-opacity="0.5"/>
+    <!-- rings -->
+    <line x1="192" y1="166" x2="192" y2="174" stroke="#bfdbfe" stroke-width="2.2" stroke-linecap="round"/>
+    <line x1="208" y1="166" x2="208" y2="174" stroke="#bfdbfe" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- grid dots -->
+    <circle cx="191" cy="184" r="1.5" fill="#e0f2fe"/>
+    <circle cx="200" cy="184" r="1.5" fill="#e0f2fe"/>
+    <circle cx="209" cy="184" r="1.5" fill="#e0f2fe"/>
+    <circle cx="191" cy="191" r="1.5" fill="#e0f2fe"/>
+    <circle cx="200" cy="191" r="1.5" fill="#e0f2fe"/>
+    <circle cx="209" cy="191" r="1.5" fill="#e0f2fe"/>
+  </g>
+
+  <!-- ── A2 EXTRAS (receipt) at cx=296, cy=181 ── -->
+  <g filter="url(#glass-drop)">
+    <circle cx="296" cy="181" r="36" fill="url(#glass-bg-rcpt)" stroke="#99f6e4" stroke-width="1" stroke-opacity="0.6"/>
+    <circle cx="296" cy="181" r="36" fill="url(#glass-sheen)"/>
+    <!-- Receipt body -->
+    <path d="M283 165 L309 165 L309 197 L306 194 L303 197 L300 194 L297 197 L294 194 L291 197 L288 194 L285 197 L283 197 Z" fill="none" stroke="#d1fae5" stroke-width="1.8" stroke-linejoin="round"/>
+    <!-- Lines -->
+    <line x1="287" y1="172" x2="305" y2="172" stroke="#a7f3d0" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="287" y1="177" x2="301" y2="177" stroke="#a7f3d0" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="287" y1="182" x2="305" y2="182" stroke="#a7f3d0" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="287" y1="187" x2="299" y2="187" stroke="#a7f3d0" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- ── A3 GASTOS (wallet) at cx=392, cy=181 ── -->
+  <g filter="url(#glass-drop)">
+    <circle cx="392" cy="181" r="36" fill="url(#glass-bg-wlt)" stroke="#c4b5fd" stroke-width="1" stroke-opacity="0.6"/>
+    <circle cx="392" cy="181" r="36" fill="url(#glass-sheen)"/>
+    <!-- Wallet body -->
+    <rect x="376" y="172" width="32" height="20" rx="4" fill="none" stroke="#ede9fe" stroke-width="1.8"/>
+    <rect x="376" y="170" width="26" height="4" rx="2" fill="none" stroke="#ddd6fe" stroke-width="1.4"/>
+    <!-- coin slot -->
+    <rect x="399" y="177" width="9" height="9" rx="4.5" fill="#a78bfa" fill-opacity="0.4" stroke="#ddd6fe" stroke-width="1.2"/>
+    <circle cx="403" cy="181.5" r="2" fill="#ede9fe"/>
+  </g>
+
+  <!-- ── A4 PRESUPUESTO (chart-bar) at cx=488, cy=181 ── -->
+  <g filter="url(#glass-drop)">
+    <circle cx="488" cy="181" r="36" fill="url(#glass-bg-chr)" stroke="#fde68a" stroke-width="1" stroke-opacity="0.6"/>
+    <circle cx="488" cy="181" r="36" fill="url(#glass-sheen)"/>
+    <!-- Bars -->
+    <rect x="474" y="186" width="7" height="11" rx="2" fill="#fde68a" fill-opacity="0.7" stroke="#fef3c7" stroke-width="1.2"/>
+    <rect x="484" y="178" width="7" height="19" rx="2" fill="#fde68a" fill-opacity="0.7" stroke="#fef3c7" stroke-width="1.2"/>
+    <rect x="494" y="172" width="7" height="25" rx="2" fill="#fde68a" fill-opacity="0.7" stroke="#fef3c7" stroke-width="1.2"/>
+    <!-- base line -->
+    <line x1="472" y1="197" x2="503" y2="197" stroke="#fde68a" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- trend line -->
+    <polyline points="477,189 487,181 497,175" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2,2" opacity="0.6"/>
+  </g>
+
+  <!-- ── A5 LUGARES (map-pin) at cx=584, cy=181 ── -->
+  <g filter="url(#glass-drop)">
+    <circle cx="584" cy="181" r="36" fill="url(#glass-bg-pin)" stroke="#fca5a5" stroke-width="1" stroke-opacity="0.6"/>
+    <circle cx="584" cy="181" r="36" fill="url(#glass-sheen)"/>
+    <!-- Pin body -->
+    <path d="M584 165 C577 165 572 170 572 177 C572 186 584 197 584 197 C584 197 596 186 596 177 C596 170 591 165 584 165 Z" fill="none" stroke="#fecdd3" stroke-width="1.8"/>
+    <circle cx="584" cy="177" r="5" fill="#fca5a5" fill-opacity="0.5" stroke="#ffe4e6" stroke-width="1.4"/>
+  </g>
+
+  <!-- ── A6 MAPA (map) at cx=680, cy=181 ── -->
+  <g filter="url(#glass-drop)">
+    <circle cx="680" cy="181" r="36" fill="url(#glass-bg-map)" stroke="#6ee7b7" stroke-width="1" stroke-opacity="0.6"/>
+    <circle cx="680" cy="181" r="36" fill="url(#glass-sheen)"/>
+    <!-- Map folded -->
+    <polygon points="668,167 679,171 679,195 668,191" fill="none" stroke="#a7f3d0" stroke-width="1.7" stroke-linejoin="round"/>
+    <polygon points="679,171 691,167 691,191 679,195" fill="none" stroke="#d1fae5" stroke-width="1.7" stroke-linejoin="round"/>
+    <!-- fold line -->
+    <line x1="679" y1="171" x2="679" y2="195" stroke="#6ee7b7" stroke-width="1.2" stroke-dasharray="2,2"/>
+    <!-- route squiggle -->
+    <path d="M671 174 Q675 180 671 186" fill="none" stroke="#6ee7b7" stroke-width="1.4" stroke-linecap="round" opacity="0.8"/>
+    <circle cx="671" cy="174" r="1.8" fill="#34d399"/>
+    <circle cx="671" cy="186" r="1.8" fill="#34d399"/>
+  </g>
+
+  <!-- Row A separator -->
+  <line x1="30" y1="250" x2="870" y2="250" stroke="url(#sep-line)" stroke-width="1"/>
+
+  <!-- ═══════════════════════════════ ROW B — CLAY / 3D INFLATED ═══════════════════════════════ -->
+
+  <rect x="30" y="252" width="840" height="138" rx="12" fill="#7c3aed" opacity="0.06"/>
+
+  <rect x="34" y="266" width="140" height="28" rx="14" fill="#9333ea" opacity="0.22"/>
+  <text x="44" y="278" font-size="9" font-weight="700" fill="#e9d5ff" letter-spacing="2" dominant-baseline="middle">STYLE B</text>
+  <text x="44" y="290" font-size="10.5" font-weight="600" fill="#e9d5ff" letter-spacing="0.5">Clay / 3D Inflated</text>
+
+  <!-- ── B1 ITINERARIO ── -->
+  <g filter="url(#clay-shadow)">
+    <rect x="164" y="305" width="72" height="72" rx="22" fill="url(#clay-cal)"/>
+    <rect x="164" y="305" width="72" height="72" rx="22" fill="url(#clay-sheen)"/>
+    <!-- Calendar -->
+    <rect x="179" y="324" width="42" height="34" rx="6" fill="#1d4ed8" fill-opacity="0.18" stroke="#1d4ed8" stroke-width="0" />
+    <rect x="179" y="324" width="42" height="34" rx="6" fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="179" y="324" width="42" height="11" rx="6" fill="#3b82f6" fill-opacity="0.5"/>
+    <line x1="191" y1="320" x2="191" y2="329" stroke="#1d4ed8" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="209" y1="320" x2="209" y2="329" stroke="#1d4ed8" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="190" cy="341" r="2.2" fill="#1d4ed8"/>
+    <circle cx="200" cy="341" r="2.2" fill="#1d4ed8"/>
+    <circle cx="210" cy="341" r="2.2" fill="#1d4ed8"/>
+    <circle cx="190" cy="350" r="2.2" fill="#1d4ed8"/>
+    <circle cx="200" cy="350" r="2.2" fill="#1d4ed8"/>
+    <circle cx="210" cy="350" r="2.2" fill="#1d4ed8"/>
+  </g>
+
+  <!-- ── B2 EXTRAS ── -->
+  <g filter="url(#clay-shadow)">
+    <rect x="260" y="305" width="72" height="72" rx="22" fill="url(#clay-rcpt)"/>
+    <rect x="260" y="305" width="72" height="72" rx="22" fill="url(#clay-sheen)"/>
+    <path d="M280 318 L312 318 L312 358 L308 354 L304 358 L300 354 L296 358 L292 354 L288 358 L284 354 L280 358 Z" fill="none" stroke="#0d9488" stroke-width="2" stroke-linejoin="round"/>
+    <line x1="285" y1="327" x2="307" y2="327" stroke="#0d9488" stroke-width="2" stroke-linecap="round"/>
+    <line x1="285" y1="334" x2="303" y2="334" stroke="#0d9488" stroke-width="2" stroke-linecap="round"/>
+    <line x1="285" y1="341" x2="307" y2="341" stroke="#0d9488" stroke-width="2" stroke-linecap="round"/>
+    <line x1="285" y1="348" x2="300" y2="348" stroke="#0d9488" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- ── B3 GASTOS ── -->
+  <g filter="url(#clay-shadow)">
+    <rect x="356" y="305" width="72" height="72" rx="22" fill="url(#clay-wlt)"/>
+    <rect x="356" y="305" width="72" height="72" rx="22" fill="url(#clay-sheen)"/>
+    <rect x="371" y="327" width="38" height="26" rx="6" fill="none" stroke="#7c3aed" stroke-width="2"/>
+    <rect x="371" y="323" width="30" height="6" rx="3" fill="none" stroke="#8b5cf6" stroke-width="1.8"/>
+    <rect x="400" y="333" width="9" height="12" rx="4.5" fill="#a78bfa" fill-opacity="0.45" stroke="#8b5cf6" stroke-width="1.5"/>
+    <circle cx="404" cy="339" r="2.5" fill="#7c3aed"/>
+  </g>
+
+  <!-- ── B4 PRESUPUESTO ── -->
+  <g filter="url(#clay-shadow)">
+    <rect x="452" y="305" width="72" height="72" rx="22" fill="url(#clay-chr)"/>
+    <rect x="452" y="305" width="72" height="72" rx="22" fill="url(#clay-sheen)"/>
+    <rect x="463" y="343" width="9" height="14" rx="3" fill="#b45309" fill-opacity="0.6" stroke="#92400e" stroke-width="1.5"/>
+    <rect x="476" y="333" width="9" height="24" rx="3" fill="#b45309" fill-opacity="0.6" stroke="#92400e" stroke-width="1.5"/>
+    <rect x="489" y="325" width="9" height="32" rx="3" fill="#b45309" fill-opacity="0.6" stroke="#92400e" stroke-width="1.5"/>
+    <line x1="460" y1="357" x2="501" y2="357" stroke="#92400e" stroke-width="2" stroke-linecap="round"/>
+    <polyline points="467,346 480,336 493,328" fill="none" stroke="#92400e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3,2"/>
+  </g>
+
+  <!-- ── B5 LUGARES ── -->
+  <g filter="url(#clay-shadow)">
+    <rect x="548" y="305" width="72" height="72" rx="22" fill="url(#clay-pin)"/>
+    <rect x="548" y="305" width="72" height="72" rx="22" fill="url(#clay-sheen)"/>
+    <path d="M584 320 C575 320 568 327 568 336 C568 347 584 360 584 360 C584 360 600 347 600 336 C600 327 593 320 584 320 Z" fill="none" stroke="#be123c" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="584" cy="336" r="6" fill="#be123c" fill-opacity="0.3" stroke="#e11d48" stroke-width="1.8"/>
+  </g>
+
+  <!-- ── B6 MAPA ── -->
+  <g filter="url(#clay-shadow)">
+    <rect x="644" y="305" width="72" height="72" rx="22" fill="url(#clay-map)"/>
+    <rect x="644" y="305" width="72" height="72" rx="22" fill="url(#clay-sheen)"/>
+    <polygon points="660,320 675,325 675,358 660,353" fill="none" stroke="#065f46" stroke-width="2" stroke-linejoin="round"/>
+    <polygon points="675,325 690,320 690,353 675,358" fill="none" stroke="#059669" stroke-width="2" stroke-linejoin="round"/>
+    <line x1="675" y1="325" x2="675" y2="358" stroke="#10b981" stroke-width="1.5" stroke-dasharray="3,2"/>
+    <path d="M664 329 Q668 337 664 345" fill="none" stroke="#065f46" stroke-width="1.8" stroke-linecap="round"/>
+    <circle cx="664" cy="329" r="2.2" fill="#10b981"/>
+    <circle cx="664" cy="345" r="2.2" fill="#10b981"/>
+  </g>
+
+  <line x1="30" y1="390" x2="870" y2="390" stroke="url(#sep-line)" stroke-width="1"/>
+
+  <!-- ═══════════════════════════════ ROW C — DARK PREMIUM ═══════════════════════════════ -->
+
+  <rect x="30" y="392" width="840" height="138" rx="12" fill="#f59e0b" opacity="0.04"/>
+
+  <rect x="34" y="406" width="140" height="28" rx="14" fill="#92400e" opacity="0.35"/>
+  <text x="44" y="418" font-size="9" font-weight="700" fill="#fde68a" letter-spacing="2" dominant-baseline="middle">STYLE C</text>
+  <text x="44" y="430" font-size="10.5" font-weight="600" fill="#fde68a" letter-spacing="0.5">Dark Premium</text>
+
+  <!-- ── C1 ITINERARIO ── -->
+  <g filter="url(#dark-outer)">
+    <rect x="164" y="445" width="72" height="72" rx="18" fill="url(#dark-bg)" stroke="#2a4a6e" stroke-width="1"/>
+    <rect x="164" y="445" width="72" height="72" rx="18" fill="url(#dark-sheen)"/>
+    <g filter="url(#dark-glow)">
+      <rect x="179" y="464" width="42" height="34" rx="5" fill="none" stroke="url(#gold-icon)" stroke-width="2"/>
+      <rect x="179" y="464" width="42" height="10" rx="5" fill="url(#gold-icon)" fill-opacity="0.35"/>
+      <line x1="191" y1="460" x2="191" y2="469" stroke="url(#gold-icon)" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="209" y1="460" x2="209" y2="469" stroke="url(#gold-icon)" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="190" cy="481" r="2" fill="url(#gold-icon)"/>
+      <circle cx="200" cy="481" r="2" fill="url(#gold-icon)"/>
+      <circle cx="210" cy="481" r="2" fill="url(#gold-icon)"/>
+      <circle cx="190" cy="490" r="2" fill="url(#gold-icon)"/>
+      <circle cx="200" cy="490" r="2" fill="url(#gold-icon)"/>
+      <circle cx="210" cy="490" r="2" fill="url(#gold-icon)"/>
+    </g>
+  </g>
+
+  <!-- ── C2 EXTRAS ── -->
+  <g filter="url(#dark-outer)">
+    <rect x="260" y="445" width="72" height="72" rx="18" fill="url(#dark-bg)" stroke="#2a4a6e" stroke-width="1"/>
+    <rect x="260" y="445" width="72" height="72" rx="18" fill="url(#dark-sheen)"/>
+    <g filter="url(#dark-glow)">
+      <path d="M280 458 L312 458 L312 498 L308 494 L304 498 L300 494 L296 498 L292 494 L288 498 L284 494 L280 498 Z" fill="none" stroke="url(#gold-icon)" stroke-width="2" stroke-linejoin="round"/>
+      <line x1="285" y1="467" x2="307" y2="467" stroke="url(#gold-icon)" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="285" y1="474" x2="303" y2="474" stroke="url(#gold-icon)" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="285" y1="481" x2="307" y2="481" stroke="url(#gold-icon)" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="285" y1="488" x2="300" y2="488" stroke="url(#gold-icon)" stroke-width="1.8" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- ── C3 GASTOS ── -->
+  <g filter="url(#dark-outer)">
+    <rect x="356" y="445" width="72" height="72" rx="18" fill="url(#dark-bg)" stroke="#2a4a6e" stroke-width="1"/>
+    <rect x="356" y="445" width="72" height="72" rx="18" fill="url(#dark-sheen)"/>
+    <g filter="url(#dark-glow)">
+      <rect x="371" y="467" width="38" height="26" rx="6" fill="none" stroke="url(#gold-icon)" stroke-width="2"/>
+      <rect x="371" y="463" width="30" height="6" rx="3" fill="none" stroke="url(#gold-icon)" stroke-width="1.8"/>
+      <rect x="400" y="473" width="9" height="12" rx="4.5" fill="url(#gold-icon)" fill-opacity="0.3" stroke="url(#gold-icon)" stroke-width="1.5"/>
+      <circle cx="404" cy="479" r="2.5" fill="url(#gold-icon)"/>
+    </g>
+  </g>
+
+  <!-- ── C4 PRESUPUESTO ── -->
+  <g filter="url(#dark-outer)">
+    <rect x="452" y="445" width="72" height="72" rx="18" fill="url(#dark-bg)" stroke="#2a4a6e" stroke-width="1"/>
+    <rect x="452" y="445" width="72" height="72" rx="18" fill="url(#dark-sheen)"/>
+    <g filter="url(#dark-glow)">
+      <rect x="463" y="483" width="9" height="14" rx="2.5" fill="url(#gold-icon)" fill-opacity="0.55" stroke="url(#gold-icon)" stroke-width="1.2"/>
+      <rect x="476" y="473" width="9" height="24" rx="2.5" fill="url(#gold-icon)" fill-opacity="0.55" stroke="url(#gold-icon)" stroke-width="1.2"/>
+      <rect x="489" y="465" width="9" height="32" rx="2.5" fill="url(#gold-icon)" fill-opacity="0.55" stroke="url(#gold-icon)" stroke-width="1.2"/>
+      <line x1="460" y1="497" x2="501" y2="497" stroke="url(#gold-icon)" stroke-width="2" stroke-linecap="round"/>
+      <polyline points="467,486 480,476 493,468" fill="none" stroke="#fde68a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+    </g>
+  </g>
+
+  <!-- ── C5 LUGARES ── -->
+  <g filter="url(#dark-outer)">
+    <rect x="548" y="445" width="72" height="72" rx="18" fill="url(#dark-bg)" stroke="#2a4a6e" stroke-width="1"/>
+    <rect x="548" y="445" width="72" height="72" rx="18" fill="url(#dark-sheen)"/>
+    <g filter="url(#dark-glow)">
+      <path d="M584 460 C575 460 568 467 568 476 C568 487 584 500 584 500 C584 500 600 487 600 476 C600 467 593 460 584 460 Z" fill="none" stroke="url(#gold-icon)" stroke-width="2" stroke-linejoin="round"/>
+      <circle cx="584" cy="476" r="5.5" fill="url(#gold-icon)" fill-opacity="0.35" stroke="url(#gold-icon)" stroke-width="1.8"/>
+    </g>
+  </g>
+
+  <!-- ── C6 MAPA ── -->
+  <g filter="url(#dark-outer)">
+    <rect x="644" y="445" width="72" height="72" rx="18" fill="url(#dark-bg)" stroke="#2a4a6e" stroke-width="1"/>
+    <rect x="644" y="445" width="72" height="72" rx="18" fill="url(#dark-sheen)"/>
+    <g filter="url(#dark-glow)">
+      <polygon points="660,460 675,465 675,498 660,493" fill="none" stroke="url(#gold-icon)" stroke-width="2" stroke-linejoin="round"/>
+      <polygon points="675,465 690,460 690,493 675,498" fill="none" stroke="url(#gold-icon)" stroke-width="2" stroke-linejoin="round"/>
+      <line x1="675" y1="465" x2="675" y2="498" stroke="url(#gold-icon)" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <path d="M664 469 Q668 477 664 485" fill="none" stroke="url(#gold-icon)" stroke-width="1.8" stroke-linecap="round"/>
+      <circle cx="664" cy="469" r="2.2" fill="url(#gold-icon)"/>
+      <circle cx="664" cy="485" r="2.2" fill="url(#gold-icon)"/>
+    </g>
+  </g>
+
+  <line x1="30" y1="530" x2="870" y2="530" stroke="url(#sep-line)" stroke-width="1"/>
+
+  <!-- ═══════════════════════════════ ROW D — GRADIENT VIVID ═══════════════════════════════ -->
+
+  <rect x="30" y="532" width="840" height="138" rx="12" fill="#6d28d9" opacity="0.08"/>
+
+  <rect x="34" y="546" width="140" height="28" rx="14" fill="#7c3aed" opacity="0.28"/>
+  <text x="44" y="558" font-size="9" font-weight="700" fill="#ddd6fe" letter-spacing="2" dominant-baseline="middle">STYLE D</text>
+  <text x="44" y="570" font-size="10.5" font-weight="600" fill="#ddd6fe" letter-spacing="0.5">Gradient Vivid</text>
+
+  <!-- ── D1 ITINERARIO ── -->
+  <g filter="url(#vivid-shadow)">
+    <rect x="164" y="585" width="72" height="72" rx="18" fill="url(#vivid-cal)"/>
+    <rect x="164" y="585" width="72" height="72" rx="18" fill="url(#vivid-sheen)"/>
+    <rect x="179" y="604" width="42" height="34" rx="5" fill="none" stroke="#ffffff" stroke-width="2"/>
+    <rect x="179" y="604" width="42" height="10" rx="5" fill="#ffffff" fill-opacity="0.3"/>
+    <line x1="191" y1="600" x2="191" y2="609" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="209" y1="600" x2="209" y2="609" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="190" cy="621" r="2.2" fill="#ffffff"/>
+    <circle cx="200" cy="621" r="2.2" fill="#ffffff"/>
+    <circle cx="210" cy="621" r="2.2" fill="#ffffff"/>
+    <circle cx="190" cy="630" r="2.2" fill="#ffffff"/>
+    <circle cx="200" cy="630" r="2.2" fill="#ffffff"/>
+    <circle cx="210" cy="630" r="2.2" fill="#ffffff"/>
+  </g>
+
+  <!-- ── D2 EXTRAS ── -->
+  <g filter="url(#vivid-shadow)">
+    <rect x="260" y="585" width="72" height="72" rx="18" fill="url(#vivid-rcpt)"/>
+    <rect x="260" y="585" width="72" height="72" rx="18" fill="url(#vivid-sheen)"/>
+    <path d="M280 598 L312 598 L312 638 L308 634 L304 638 L300 634 L296 638 L292 634 L288 638 L284 634 L280 638 Z" fill="none" stroke="#ffffff" stroke-width="2" stroke-linejoin="round"/>
+    <line x1="285" y1="607" x2="307" y2="607" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="285" y1="614" x2="303" y2="614" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="285" y1="621" x2="307" y2="621" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="285" y1="628" x2="300" y2="628" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+
+  <!-- ── D3 GASTOS ── -->
+  <g filter="url(#vivid-shadow)">
+    <rect x="356" y="585" width="72" height="72" rx="18" fill="url(#vivid-wlt)"/>
+    <rect x="356" y="585" width="72" height="72" rx="18" fill="url(#vivid-sheen)"/>
+    <rect x="371" y="607" width="38" height="26" rx="6" fill="none" stroke="#ffffff" stroke-width="2"/>
+    <rect x="371" y="603" width="30" height="6" rx="3" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+    <rect x="400" y="613" width="9" height="12" rx="4.5" fill="#ffffff" fill-opacity="0.25" stroke="#ffffff" stroke-width="1.5"/>
+    <circle cx="404" cy="619" r="2.5" fill="#ffffff"/>
+  </g>
+
+  <!-- ── D4 PRESUPUESTO ── -->
+  <g filter="url(#vivid-shadow)">
+    <rect x="452" y="585" width="72" height="72" rx="18" fill="url(#vivid-chr)"/>
+    <rect x="452" y="585" width="72" height="72" rx="18" fill="url(#vivid-sheen)"/>
+    <rect x="463" y="623" width="9" height="14" rx="2.5" fill="#ffffff" fill-opacity="0.6" stroke="#ffffff" stroke-width="1.2"/>
+    <rect x="476" y="613" width="9" height="24" rx="2.5" fill="#ffffff" fill-opacity="0.6" stroke="#ffffff" stroke-width="1.2"/>
+    <rect x="489" y="605" width="9" height="32" rx="2.5" fill="#ffffff" fill-opacity="0.6" stroke="#ffffff" stroke-width="1.2"/>
+    <line x1="460" y1="637" x2="501" y2="637" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+    <polyline points="467,626 480,616 493,608" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+  </g>
+
+  <!-- ── D5 LUGARES ── -->
+  <g filter="url(#vivid-shadow)">
+    <rect x="548" y="585" width="72" height="72" rx="18" fill="url(#vivid-pin)"/>
+    <rect x="548" y="585" width="72" height="72" rx="18" fill="url(#vivid-sheen)"/>
+    <path d="M584 600 C575 600 568 607 568 616 C568 627 584 640 584 640 C584 640 600 627 600 616 C600 607 593 600 584 600 Z" fill="none" stroke="#ffffff" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="584" cy="616" r="5.5" fill="#ffffff" fill-opacity="0.3" stroke="#ffffff" stroke-width="1.8"/>
+  </g>
+
+  <!-- ── D6 MAPA ── -->
+  <g filter="url(#vivid-shadow)">
+    <rect x="644" y="585" width="72" height="72" rx="18" fill="url(#vivid-map)"/>
+    <rect x="644" y="585" width="72" height="72" rx="18" fill="url(#vivid-sheen)"/>
+    <polygon points="660,600 675,605 675,638 660,633" fill="none" stroke="#ffffff" stroke-width="2" stroke-linejoin="round"/>
+    <polygon points="675,605 690,600 690,633 675,638" fill="none" stroke="#ffffff" stroke-width="2" stroke-linejoin="round"/>
+    <line x1="675" y1="605" x2="675" y2="638" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.7"/>
+    <path d="M664 609 Q668 617 664 625" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+    <circle cx="664" cy="609" r="2.2" fill="#ffffff"/>
+    <circle cx="664" cy="625" r="2.2" fill="#ffffff"/>
+  </g>
+
+  <!-- Bottom border -->
+  <rect x="0" y="678" width="900" height="2" fill="url(#title-grad)" opacity="0.5"/>
+
+  <!-- Footer -->
+  <text x="450" y="667" text-anchor="middle" font-size="9" fill="#475569" letter-spacing="1.5">España 2026 · Navigation Icon System · Style Exploration © 2026</text>
+
+</svg>

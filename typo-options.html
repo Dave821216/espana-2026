@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #f2f3f7;
+  font-family: Inter, sans-serif;
+  width: 412px;
+  padding: 0 0 40px;
+}
+
+/* ── Etiqueta de sección ── */
+.section-label {
+  font-family: Inter, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #7f8c8d;
+  padding: 20px 16px 8px;
+}
+
+/* ── HEADER: replica exacta del header de la app ── */
+.header {
+  background: linear-gradient(135deg, #c0392b 0%, #7b241c 100%);
+  color: white;
+  padding: 22px 18px 18px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(192,57,43,0.35);
+}
+.header-bg {
+  position: absolute;
+  inset: 0;
+  background: url('http://localhost:8765/fondo.jpg') center/cover no-repeat;
+  opacity: 0.22;
+}
+.header > * { position: relative; z-index: 1; }
+
+/* ── ACTUAL (referencia) ── */
+.actual h1 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.actual p {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 12px;
+  opacity: 0.8;
+  margin-top: 3px;
+  letter-spacing: 0.1px;
+}
+
+/* ── RALEWAY ── */
+.raleway h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+}
+.raleway p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  opacity: 0.78;
+  margin-top: 6px;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+}
+
+/* ── Badges ── */
+.header-meta { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+.badge {
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(4px);
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 13px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.28);
+  letter-spacing: 0.3px;
+}
+.badge-actual {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ── Fake content cards para dar contexto ── */
+.fake-content { padding: 14px 14px 0; }
+.fake-card {
+  background: white;
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+.fake-card-top { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.fake-dot { width: 36px; height: 36px; border-radius: 50%; background: #c0392b; display: flex; align-items: center; justify-content: center; color: white; font-family: Raleway, sans-serif; font-weight: 900; font-size: 13px; flex-shrink: 0; }
+.fake-title { font-family: Raleway, sans-serif; font-weight: 700; font-size: 15px; color: #1a2535; }
+.fake-sub { font-family: Inter, sans-serif; font-size: 11px; color: #7f8c8d; margin-top: 2px; }
+.fake-bar { height: 6px; background: #eef0f2; border-radius: 3px; overflow: hidden; }
+.fake-fill { height: 100%; background: linear-gradient(90deg, #c0392b, #e67e22); border-radius: 3px; }
+
+/* ── Nav tabs fake ── */
+.fake-nav {
+  position: fixed;
+  bottom: 0;
+  width: 412px;
+  background: white;
+  border-top: 1px solid #e8eaed;
+  display: flex;
+  padding: 6px 0 10px;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.07);
+}
+.fake-tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-family: Raleway, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: #7f8c8d;
+  letter-spacing: 0.3px;
+}
+.fake-tab.active { color: #c0392b; }
+.fake-tab .icon { font-size: 20px; }
+</style>
+</head>
+<body>
+
+<!-- ACTUAL -->
+<div class="section-label">Actual (referencia)</div>
+<div class="header actual">
+  <div class="header-bg"></div>
+  <h1>🇪🇸 España 2026</h1>
+  <p>Dave · Kelly · Jacobo</p>
+  <div class="header-meta">
+    <span class="badge badge-actual">28 jun – 16 jul</span>
+    <span class="badge badge-actual">19 días</span>
+    <span class="badge badge-actual">3 viajeros</span>
+  </div>
+</div>
+
+<!-- RALEWAY -->
+<div class="section-label">Con Raleway</div>
+<div class="header raleway">
+  <div class="header-bg"></div>
+  <h1>🇪🇸 España 2026</h1>
+  <p>Dave · Kelly · Jacobo</p>
+  <div class="header-meta">
+    <span class="badge">28 jun – 16 jul</span>
+    <span class="badge">19 días</span>
+    <span class="badge">3 viajeros</span>
+  </div>
+</div>
+
+<!-- Contexto visual de la app -->
+<div class="fake-content">
+  <div class="fake-card">
+    <div class="fake-card-top">
+      <div class="fake-dot">D2</div>
+      <div>
+        <div class="fake-title">Madrid</div>
+        <div class="fake-sub">Lun 29 jun · Llegada al apartamento</div>
+      </div>
+    </div>
+    <div class="fake-bar"><div class="fake-fill" style="width:68%"></div></div>
+  </div>
+  <div class="fake-card">
+    <div class="fake-card-top">
+      <div class="fake-dot">D5</div>
+      <div>
+        <div class="fake-title">Valencia</div>
+        <div class="fake-sub">Jue 2 jul · Tren Madrid → Valencia</div>
+      </div>
+    </div>
+    <div class="fake-bar"><div class="fake-fill" style="width:45%"></div></div>
+  </div>
+</div>
+
+<div class="fake-nav">
+  <div class="fake-tab active"><span class="icon">🗓️</span>Itinerario</div>
+  <div class="fake-tab"><span class="icon">💶</span>Gastos</div>
+  <div class="fake-tab"><span class="icon">💰</span>Presupuesto</div>
+  <div class="fake-tab"><span class="icon">🗺️</span>Mapa</div>
+  <div class="fake-tab"><span class="icon">📊</span>Más</div>
+</div>
+
+</body>
+</html>
