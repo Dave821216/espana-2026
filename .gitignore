@@ -1,0 +1,11 @@
+Reservas/
+backups completos/
+city-photos/
+*.pdf
+espana2026-backup-*.json
+datos_backup_*.json
+nav-icons-preview.svg
+typo-options.html
+index.backup-*.html
+.DS_Store
+.claude/
