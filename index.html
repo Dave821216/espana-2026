@@ -884,7 +884,7 @@
   const totalFrames = 180; // ~3 segundos a 60fps
   (function animate() {
     if(frames < totalFrames + 30) requestAnimationFrame(animate);
-    globe.rotation.y += 0.018;
+    globe.rotation.y += 0.0349;
     renderer.render(scene, camera);
     frames++;
     if(frames === totalFrames) {
