@@ -1,4 +1,4 @@
-const CACHE = 'espana2026-v4';
+const CACHE = 'espana2026-v5';
 const FILES = [
   './index.html',
   './manifest.json',
